@@ -1,4 +1,9 @@
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for
+import hashlib
+import sqlite3
+import secrets
+from functools import wraps
+
 from models.models import (
     init_db, get_all_tasks, create_colaborador_com_card_e_tarefas,
     update_task_status, delete_task, get_dashboard_stats,
@@ -6,16 +11,12 @@ from models.models import (
     update_tarefa_status, get_all_colunas_com_setores, verify_token,
     get_colaborador_by_token, add_anotacao_criptografada
 )
-import secrets
-from functools import wraps
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)  # Chave secreta para sessões
 
-# Inicializa o banco de dados
 init_db()
 
-# Decorator para verificar autenticação (simplificado para demonstração)
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
@@ -23,10 +24,6 @@ def login_required(f):
             return redirect(url_for('login'))
         return f(*args, **kwargs)
     return decorated_function
-
-# ==========================================
-# ----------- ROTAS DO FRONT-END -----------
-# ==========================================
 
 @app.route('/')
 def index():
@@ -36,14 +33,17 @@ def index():
 def login():
     return render_template('plataforma/login.html')
 
+@app.route('/login/colaborador')
+def login_colaborador():
+    return render_template('plataforma/login_colaborador.html')
+
 @app.route('/plataforma')
 def plataforma():
     if 'user_id' not in session:
         return redirect(url_for('login'))
     
-    # Verifica o tipo de usuário (simplificado)
     if session.get('role') == 'colaborador':
-        return redirect(url_for('onboarding_com_token', token=session.get('token')))
+        return redirect(url_for('onboarding', token=session.get('token')))
     else:
         return render_template('plataforma/dashboard.html')
 
@@ -62,24 +62,53 @@ def onboarding():
     if not colaborador:
         return render_template('error.html', mensagem="Token inválido ou expirado"), 404
     
-    # Cria sessão para o colaborador
     session['user_id'] = colaborador['id']
     session['role'] = 'colaborador'
     session['token'] = token
     
     return render_template('plataforma/onboarding.html', token=token)
 
-# ==========================================
-# -------------- ROTAS DA API --------------
-# ==========================================
+@app.route('/api/login', methods=['POST'])
+def api_login():
+    try:
+        data = request.json
+        email = data.get('email')
+        senha = data.get('senha')
+        
+        conn = sqlite3.connect('guia.db')
+        cursor = conn.cursor()
+        
+        # Busca o usuário no banco de dados
+        cursor.execute('''
+            SELECT id, nome, senha_hash, role, setor_id 
+            FROM usuarios_sistema 
+            WHERE email = ? AND ativo = 1
+        ''', (email,))
+        
+        usuario = cursor.fetchone()
+        conn.close()
+        
+        if usuario:
+            hash_completo = usuario[2]
+            salt, hash_real = hash_completo.split('$')
+            hash_verificar = hashlib.sha256((senha + salt).encode()).hexdigest()
+            
+            if hash_verificar == hash_real:
+                session['user_id'] = usuario[0]
+                session['nome'] = usuario[1]
+                session['role'] = usuario[3]
+                session['setor_id'] = usuario[4]
+                return jsonify({"success": True, "redirect": "/plataforma/dashboard"})
+                
+        return jsonify({"success": False, "error": "Email ou senha incorretos"}), 401
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
 
-# --- COLUNAS KANBAN ---
 @app.route('/api/colunas', methods=['GET'])
 def api_get_colunas():
     colunas = get_all_colunas_com_setores()
     return jsonify(colunas)
 
-# --- CARDS / TAREFAS ---
 @app.route('/api/tasks', methods=['GET'])
 def api_get_tasks():
     tasks = get_all_tasks()
@@ -123,14 +152,12 @@ def api_delete_task(task_id):
     success = delete_task(task_id)
     return jsonify({"success": success})
 
-# --- TAREFAS INDIVIDUAIS ---
 @app.route('/api/tarefas/<int:tarefa_id>', methods=['PATCH'])
 def api_toggle_tarefa(tarefa_id):
     data = request.json
     success = update_tarefa_status(tarefa_id, data['concluida'])
     return jsonify({"success": success})
 
-# --- ONBOARDING DO COLABORADOR ---
 @app.route('/api/meu-onboarding', methods=['GET'])
 def api_get_meu_onboarding():
     token = request.args.get('token')
@@ -154,7 +181,6 @@ def api_salvar_anotacao():
     success = add_anotacao_criptografada(token, anotacao)
     return jsonify({"success": success})
 
-# --- DASHBOARD STATS ---
 @app.route('/api/dashboard/stats', methods=['GET'])
 def api_get_stats():
     stats = get_dashboard_stats()
