@@ -13,7 +13,7 @@ from models.models import (
 )
 
 app = Flask(__name__)
-app.secret_key = secrets.token_hex(16)  # Chave secreta para sessões
+app.secret_key = secrets.token_hex(16)
 
 init_db()
 
