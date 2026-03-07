@@ -1,0 +1,144 @@
+/* Estilo simples para login/cadastro */
+@import url('main.css');
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #FFE5E3 0%, #FFF0E6 100%);
+    padding: 100px 20px 40px;
+}
+
+.auth-box {
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 450px; /* Aumentei um pouco */
+    padding: 40px;
+}
+
+.auth-box h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--dark);
+    font-size: 2rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%; /* Garante que ocupe toda largura */
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--dark);
+}
+
+.form-group input {
+    padding: 12px;
+    border: 2px solid var(--gray-lighter);
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: 0.2s;
+    width: 100%; /* Input ocupa toda largura */
+    box-sizing: border-box; /* Importantíssimo! */
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-red);
+}
+
+/* Linha com dois campos (nome e sobrenome) */
+.form-row {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.form-row .form-group {
+    flex: 1; /* Cada um ocupa metade */
+    min-width: 0; /* Previne overflow */
+}
+
+.password-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forgot-link {
+    color: var(--primary-red);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.btn-auth {
+    background-color: var(--primary-red);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.btn-auth:hover {
+    background-color: #E5352B;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--gray-lighter);
+}
+
+.auth-footer a {
+    color: var(--primary-red);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Checkbox dos termos */
+.terms {
+    flex-direction: row !important;
+    align-items: center;
+    gap: 10px;
+}
+
+.terms input {
+    width: auto !important; /* Checkbox não precisa ser largo */
+    flex: 0 0 auto;
+}
+
+.terms label {
+    font-weight: normal;
+    flex: 1;
+}
