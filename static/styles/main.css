@@ -656,21 +656,6 @@ p {
     margin-bottom: 24px;
 }
 
-.social-links {
-    display: flex;
-    gap: 16px;
-}
-
-.social-links a {
-    color: var(--gray-light);
-    font-size: 1.25rem;
-    transition: var(--transition-fast);
-}
-
-.social-links a:hover {
-    color: var(--primary-red);
-}
-
 .footer-links {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

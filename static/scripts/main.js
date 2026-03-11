@@ -25,13 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!mobileMenuBtn.contains(event.target) && !mainNav.contains(event.target)) {
-                mainNav.style.display = 'none';
-            }
-        });
     }
     
     // Smooth scrolling for anchor links
