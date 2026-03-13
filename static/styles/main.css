@@ -39,9 +39,9 @@
 }
 
 body {
-    font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif; /* Adicionei Poppins como fallback principal, conforme o PDF */
+    font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
     color: var(--dark);
-    background-color: var(--bg-main); /* Aplicando a nova cor de fundo geral */
+    background-color: var(--bg-main);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -138,7 +138,7 @@ p {
 
 /* Header */
 .main-header {
-    background-color: var(--bg-main); /* Aplicando cor específica ao header */
+    background-color: var(--bg-main);
     box-shadow: var(--shadow-sm);
     position: fixed;
     width: 100%;
@@ -219,7 +219,6 @@ p {
 /* Hero Section */
 .hero-section {
     padding: 180px 0 100px;
-    /* Gradiente suave de fundo usando o creme da paleta e o fundo principal */
     background: linear-gradient(135deg, var(--bg-main) 0%, var(--secondary) 100%);
     overflow: hidden;
 }
@@ -593,7 +592,6 @@ p {
 /* CTA Section */
 .cta-section {
     padding: 100px 0;
-    /* Usando o Laranja e o Azul escuro para dar um peso no final da página */
     background: linear-gradient(135deg, var(--primary) 0%, #e68200 100%);
     color: var(--white);
 }
@@ -638,12 +636,12 @@ p {
 }
 
 .benefit i {
-    color: var(--secondary); /* Icones em creme no meio do laranja ficam ótimos */
+    color: var(--secondary);
 }
 
 /* Footer */
 .main-footer {
-    background-color: var(--dark); /* Usa o azul escuro oficial */
+    background-color: var(--dark);
     color: var(--white);
     padding: 80px 0 40px;
 }
@@ -686,7 +684,7 @@ p {
 }
 
 .link-group a:hover {
-    color: var(--secondary); /* Link com hover em creme pra destacar sutilmente no escuro */
+    color: var(--secondary);
 }
 
 .footer-bottom {
@@ -704,7 +702,7 @@ p {
     gap: 24px;
 }
 
-/* Responsividade */
+/* Responsividade Unificada */
 @media (max-width: 992px) {
     h1 {
         font-size: 2.75rem;
@@ -734,6 +732,10 @@ p {
     .footer-links {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .kanban-preview {
+        grid-template-columns: 1fr; 
+    }
 }
 
 @media (max-width: 768px) {
@@ -745,6 +747,14 @@ p {
         display: block;
     }
     
+    .hero-section {
+        padding: 120px 0 60px; 
+    }
+
+    .hero-image {
+        display: none; 
+    }
+    
     .hero-buttons {
         flex-direction: column;
     }
@@ -752,6 +762,10 @@ p {
     .steps-container {
         flex-direction: column;
         gap: 40px;
+    }
+
+    .step.aos-init.aos-animate {
+        padding: 0 10px;
     }
     
     .step-line {

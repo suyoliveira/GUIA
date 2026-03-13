@@ -18,60 +18,60 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #F0F2F5;
+            background: #f8f7f4; /* Fundo da marca */
             font-size: 14px;
         }
         
         /* HEADER - Compacto */
-        .dashboard-header { background: #FFF; box-shadow: 0 1px 5px rgba(0,0,0,0.05); position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 60px; }
+        .dashboard-header { background: #FFF; box-shadow: 0 1px 5px rgba(46, 67, 101, 0.05); position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 60px; }
         .dashboard-header-content { display: flex; justify-content: space-between; align-items: center; padding: 0 20px; max-width: 1800px; margin: 0 auto; height: 100%; }
-        .dashboard-logo a { text-decoration: none; font-size: 1.3rem; font-weight: 700; color: #FF3B30; display: flex; align-items: center; gap: 8px; }
-        .dashboard-search { display: flex; align-items: center; background: #F0F2F5; border-radius: 6px; padding: 6px 12px; width: 250px; }
+        .dashboard-logo a { text-decoration: none; font-size: 1.3rem; font-weight: 700; color: #fc9003; display: flex; align-items: center; gap: 8px; } /* Laranja */
+        .dashboard-search { display: flex; align-items: center; background: #f8f7f4; border-radius: 6px; padding: 6px 12px; width: 250px; }
         .dashboard-search i { color: #888; margin-right: 8px; font-size: 0.9rem; }
         .dashboard-search input { border: none; background: none; outline: none; width: 100%; font-size: 0.9rem; }
         .dashboard-user { display: flex; align-items: center; gap: 15px; }
         .user-info { display: flex; align-items: center; gap: 10px; cursor: pointer; line-height: 1.2; }
-        .user-avatar { width: 32px; height: 32px; background: #FF3B30; color: #FFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.85rem;}
+        .user-avatar { width: 32px; height: 32px; background: #fc9003; color: #FFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.85rem;} /* Laranja */
         
         /* ESTRUTURA PRINCIPAL */
         .dashboard-container { margin-top: 60px; padding: 15px 20px; max-width: 1800px; margin-left: auto; margin-right: auto; }
         .dashboard-content { display: flex; gap: 15px; }
         
         /* SIDEBAR - Mais estreita */
-        .dashboard-sidebar { width: 220px; background: #FFF; border-radius: 10px; padding: 15px; height: fit-content; box-shadow: 0 2px 8px rgba(0,0,0,0.04); flex-shrink: 0; }
+        .dashboard-sidebar { width: 220px; background: #FFF; border-radius: 10px; padding: 15px; height: fit-content; box-shadow: 0 2px 8px rgba(46, 67, 101, 0.04); flex-shrink: 0; }
         .dashboard-main { flex: 1; min-width: 0; }
         
         .sidebar-section { margin-bottom: 20px; }
         .sidebar-section h3 { font-size: 0.8rem; color: #888; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px; }
-        .sidebar-section h3 i { color: #FF3B30; }
+        .sidebar-section h3 i { color: #fc9003; } /* Laranja */
         .sidebar-menu { list-style: none; }
         .sidebar-menu li { margin-bottom: 4px; }
         .sidebar-menu a { display: flex; align-items: center; gap: 10px; padding: 8px 12px; text-decoration: none; color: #444; border-radius: 6px; transition: all 0.2s ease; font-weight: 500; font-size: 0.95rem;}
-        .sidebar-menu a:hover, .sidebar-menu a.active { background: #FFF0F0; color: #FF3B30; }
-        .sidebar-menu a.active { background: #FF3B30; color: #FFF; }
+        .sidebar-menu a:hover, .sidebar-menu a.active { background: rgba(252, 144, 3, 0.1); color: #fc9003; } /* Hover Laranja Suave */
+        .sidebar-menu a.active { background: #fc9003; color: #FFF; } /* Ativo Laranja */
         
         /* QUICK STATS */
         .quick-stats { display: flex; gap: 15px; margin-bottom: 15px; }
-        .stat-card { background: #FFF; border-radius: 10px; padding: 15px; display: flex; align-items: center; gap: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); flex: 1; }
+        .stat-card { background: #FFF; border-radius: 10px; padding: 15px; display: flex; align-items: center; gap: 15px; box-shadow: 0 2px 8px rgba(46, 67, 101, 0.04); flex: 1; }
         .stat-icon { width: 45px; height: 45px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
         .stat-info h3 { font-size: 1.6rem; font-weight: 700; color: #333; margin-bottom: 2px; }
         .stat-info p { color: #666; font-size: 0.85rem; }
         
         /* KANBAN CONTAINER */
-        .kanban-board-container { background: #FFF; border-radius: 10px; padding: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; flex-direction: column; height: calc(100vh - 160px); }
+        .kanban-board-container { background: #FFF; border-radius: 10px; padding: 15px; box-shadow: 0 2px 8px rgba(46, 67, 101, 0.04); display: flex; flex-direction: column; height: calc(100vh - 160px); }
         .kanban-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #EAEAEA; flex-shrink: 0; }
         .kanban-header h2 { font-size: 1.2rem; color: #333; display: flex; align-items: center; gap: 10px; }
         
         /* BOTÕES */
         .btn-action { padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; border: none; display: flex; align-items: center; gap: 6px; font-size: 0.9rem; }
-        .btn-primary-action { background: #FF3B30; color: #FFF; }
-        .btn-primary-action:hover { background: #E5352B; }
-        .btn-secondary-action { background: #F0F2F5; color: #444; }
+        .btn-primary-action { background: #fc9003; color: #FFF; } /* Laranja */
+        .btn-primary-action:hover { background: #e68200; } /* Laranja Hover */
+        .btn-secondary-action { background: #f8f7f4; color: #444; }
         .btn-secondary-action:hover { background: #E4E6E9; }
         
         /* COLUNAS DO KANBAN */
         .kanban-columns { display: flex; gap: 15px; overflow-x: auto; overflow-y: hidden; padding-bottom: 5px; flex: 1; }
-        .kanban-column { background: #F4F5F7; border-radius: 8px; padding: 10px; min-width: 250px; width: 280px; flex-shrink: 0; display: flex; flex-direction: column; }
+        .kanban-column { background: #f5f4f1; border-radius: 8px; padding: 10px; min-width: 250px; width: 280px; flex-shrink: 0; display: flex; flex-direction: column; } /* Fundo um pouco mais quente */
         
         .column-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; border-bottom: 2px solid #E0E0E0; margin-bottom: 10px; flex-shrink: 0; }
         .column-header h3 { font-size: 0.95rem; font-weight: 600; color: #333; }
@@ -82,11 +82,11 @@
         .tasks-container { flex: 1; overflow-y: auto; overflow-x: hidden; padding-right: 4px; }
         .tasks-container::-webkit-scrollbar { width: 6px; }
         .tasks-container::-webkit-scrollbar-thumb { background-color: #CCC; border-radius: 3px; }
-        .tasks-container.drag-over { background-color: rgba(255, 59, 48, 0.05); border-radius: 6px; }
+        .tasks-container.drag-over { background-color: rgba(252, 144, 3, 0.05); border-radius: 6px; } /* Laranja Suave */
         
         /* CARDS */
-        .task-card { background: #FFF; border: 1px solid #EAEAEA; border-radius: 8px; padding: 12px; margin-bottom: 10px; cursor: move; transition: all 0.2s ease; border-left: 3px solid #FF3B30; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
-        .task-card:hover { transform: translateY(-1px); box-shadow: 0 4px 8px rgba(0,0,0,0.08); }
+        .task-card { background: #FFF; border: 1px solid #EAEAEA; border-radius: 8px; padding: 12px; margin-bottom: 10px; cursor: move; transition: all 0.2s ease; border-left: 3px solid #fc9003; box-shadow: 0 1px 3px rgba(46, 67, 101, 0.02); } /* Laranja */
+        .task-card:hover { transform: translateY(-1px); box-shadow: 0 4px 8px rgba(46, 67, 101, 0.08); }
         .task-card.dragging { opacity: 0.5; }
         .task-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
         .task-tags { display: flex; flex-wrap: wrap; gap: 4px; }
@@ -94,23 +94,23 @@
         .task-actions { display: flex; gap: 2px; opacity: 0; transition: opacity 0.2s ease; }
         .task-card:hover .task-actions { opacity: 1; }
         .task-action-btn { background: transparent; border: none; width: 24px; height: 24px; border-radius: 4px; cursor: pointer; color: #888; display: flex; align-items: center; justify-content: center; font-size: 0.85rem;}
-        .task-action-btn:hover { background: #F0F2F5; color: #FF3B30; }
+        .task-action-btn:hover { background: #f8f7f4; color: #fc9003; } /* Hover Laranja */
         
         .task-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; color: #222; }
         .task-description { font-size: 0.8rem; color: #777; margin-bottom: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         
         .task-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding-top: 8px; border-top: 1px solid #F5F5F5; }
         .task-assignee { display: flex; align-items: center; gap: 6px; }
-        .assignee-avatar { width: 22px; height: 22px; background: #FF3B30; color: #FFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; }
-        .assignee-name { font-size: 0.75rem; color: #555; font-family: monospace; background: #F0F2F5; padding: 2px 6px; border-radius: 4px;}
+        .assignee-avatar { width: 22px; height: 22px; background: #fc9003; color: #FFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; } /* Laranja */
+        .assignee-name { font-size: 0.75rem; color: #555; font-family: monospace; background: #f8f7f4; padding: 2px 6px; border-radius: 4px;}
         
         /* MODAIS GERAIS */
-        .task-modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center; backdrop-filter: blur(3px); padding: 20px;}
-        .task-modal { background: #FFF; border-radius: 12px; width: 100%; max-width: 450px; max-height: 90vh; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .task-modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(46, 67, 101, 0.4); z-index: 1000; justify-content: center; align-items: center; backdrop-filter: blur(3px); padding: 20px;} /* Overlay Azul Escuro */
+        .task-modal { background: #FFF; border-radius: 12px; width: 100%; max-width: 450px; max-height: 90vh; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(46, 67, 101, 0.2); }
         .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; border-bottom: 1px solid #EAEAEA; flex-shrink: 0;}
         .modal-header h3 { font-size: 1.1rem; color: #333; font-weight: 600; }
         .close-modal { background: transparent; border: none; font-size: 1.1rem; cursor: pointer; color: #888; width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; transition: 0.2s;}
-        .close-modal:hover { background: #F0F2F5; color: #FF3B30; }
+        .close-modal:hover { background: #f8f7f4; color: #fc9003; } /* Hover Laranja */
         .modal-body { padding: 20px; overflow-y: auto; flex: 1; }
         .modal-footer { display: flex; justify-content: flex-end; gap: 10px; padding: 15px 20px; border-top: 1px solid #EAEAEA; background: #FAFAFA; border-radius: 0 0 12px 12px; flex-shrink: 0;}
         
@@ -118,14 +118,14 @@
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; margin-bottom: 6px; font-weight: 600; color: #444; font-size: 0.85rem; }
         .form-control { width: 100%; padding: 10px 12px; border: 1px solid #DDD; border-radius: 6px; font-size: 0.9rem; transition: all 0.2s ease; font-family: inherit; }
-        .form-control:focus { outline: none; border-color: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,0.1); }
+        .form-control:focus { outline: none; border-color: #fc9003; box-shadow: 0 0 0 3px rgba(252, 144, 3, 0.1); } /* Laranja Focus */
         
         /* ITEM DE CONFIGURAÇÃO (Checklists Padrão renderizados pelo kanban.js) */
         .checklist-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; background: #FFF; border: 1px solid #EAEAEA; border-radius: 8px; margin-bottom: 8px; }
         .checklist-item-info strong { display: block; font-size: 0.9rem; color: #333; margin-bottom: 2px; }
         .checklist-item-info small { color: #888; font-size: 0.8rem; }
-        .btn-delete-checklist { background: #FFE5E5; color: #FF3B30; border: none; width: 32px; height: 32px; border-radius: 6px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center;}
-        .btn-delete-checklist:hover { background: #FF3B30; color: #FFF; }
+        .btn-delete-checklist { background: rgba(252, 144, 3, 0.1); color: #fc9003; border: none; width: 32px; height: 32px; border-radius: 6px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center;}
+        .btn-delete-checklist:hover { background: #fc9003; color: #FFF; }
 
         /* --- ESTILOS ESPECÍFICOS DO MODAL: VISUALIZAR COLABORADOR --- */
         #taskDetailModal .task-modal { max-width: 650px; }
@@ -136,15 +136,15 @@
         
         .task-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
         .task-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: #F9F9F9; border: 1px solid #EEE; border-radius: 6px; transition: 0.2s; }
-        .task-item:hover { border-color: #DDD; background: #F4F5F7; }
+        .task-item:hover { border-color: #DDD; background: #f8f7f4; }
         .task-checkbox { width: 20px; height: 20px; border: 2px solid #CCC; border-radius: 4px; display: flex; align-items: center; justify-content: center; cursor: pointer; background: #FFF; flex-shrink: 0;}
-        .task-checkbox.checked { background: #34C759; border-color: #34C759; color: #FFF; }
+        .task-checkbox.checked { background: #2e4365; border-color: #2e4365; color: #FFF; } /* Azul Escuro */
         .task-checkbox i { font-size: 10px; display: none; }
         .task-checkbox.checked i { display: block; }
         .task-text { flex: 1; font-size: 0.9rem; color: #333; }
         .task-status { font-size: 0.75rem; font-weight: 600; padding: 3px 8px; border-radius: 12px; }
-        .task-status.completed { background: #D4EDDA; color: #155724; }
-        .task-status.pending { background: #FFF3CD; color: #856404; }
+        .task-status.completed { background: rgba(46, 67, 101, 0.1); color: #2e4365; } /* Azul Escuro Suave */
+        .task-status.pending { background: rgba(251, 222, 149, 0.5); color: #e68200; } /* Creme Suave / Laranja Escurecido */
 
         /* --- CONTROLE DE ACESSO UI --- */
         body[data-is-rh="false"] .rh-only {
@@ -155,16 +155,8 @@
 <body data-is-rh="{{ 'true' if is_rh else 'false' }}">
     <header class="dashboard-header">
         <div class="dashboard-header-content">
-            <div class="dashboard-logo">
-                <a href="{{ url_for('index') }}">
-                    <i class="fas fa-rocket"></i>
-                    <span>GUIA</span>
-                </a>
-            </div>
-            
-            <div class="dashboard-search">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Buscar colaborador..." id="searchInput">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/image.png') }}" alt="Logo do GUIA" class="logo-image" height="60">
             </div>
             
             <div class="dashboard-user">
@@ -207,8 +199,8 @@
             <main class="dashboard-main">
                 <div class="quick-stats">
                     <div class="stat-card">
-                        <div class="stat-icon" style="background: rgba(255,59,48,0.1);">
-                            <i class="fas fa-users" style="color: #FF3B30;"></i>
+                        <div class="stat-icon" style="background: rgba(252, 144, 3, 0.1);">
+                            <i class="fas fa-users" style="color: #fc9003;"></i>
                         </div>
                         <div class="stat-info">
                             <h3 class="column-count">...</h3>
@@ -216,8 +208,8 @@
                         </div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon" style="background: rgba(52,199,89,0.1);">
-                            <i class="fas fa-building" style="color: #34C759;"></i>
+                        <div class="stat-icon" style="background: rgba(46, 67, 101, 0.1);">
+                            <i class="fas fa-building" style="color: #2e4365;"></i>
                         </div>
                         <div class="stat-info">
                             <h3>Integração</h3>
@@ -229,7 +221,7 @@
                 <div class="kanban-board-container">
                     <div class="kanban-header">
                     <h2>
-                        <i class="fas fa-columns" style="color: #FF3B30;"></i>
+                        <i class="fas fa-columns" style="color: #fc9003;"></i>
                         Painel de Acompanhamento
                     </h2>
                     <button class="btn-action btn-primary-action rh-only" id="btnNewTask">
@@ -279,8 +271,8 @@
                         <input type="email" name="email" class="form-control" placeholder="maria@exemplo.com">
                     </div>
                     
-                    <div style="background: rgba(0, 122, 255, 0.05); border-left: 3px solid #007AFF; padding: 12px; border-radius: 4px; font-size: 0.8rem; color: #555; margin-top: 15px;">
-                        <i class="fas fa-info-circle" style="color: #007AFF;"></i> Um Token de Acesso seguro ao "Guia de Bolso" será gerado automaticamente.
+                    <div style="background: rgba(46, 67, 101, 0.05); border-left: 3px solid #2e4365; padding: 12px; border-radius: 4px; font-size: 0.8rem; color: #555; margin-top: 15px;">
+                        <i class="fas fa-info-circle" style="color: #2e4365;"></i> Um Token de Acesso seguro ao "Guia de Bolso" será gerado automaticamente.
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -295,7 +287,7 @@
     <div class="task-modal-overlay" id="checklistsModal">
         <div class="task-modal" style="max-width: 500px;">
             <div class="modal-header">
-                <h3><i class="fas fa-cog" style="color: #FF3B30; margin-right: 8px;"></i> <span id="checklistModalTitle">Tarefas Padrão</span></h3>
+                <h3><i class="fas fa-cog" style="color: #fc9003; margin-right: 8px;"></i> <span id="checklistModalTitle">Tarefas Padrão</span></h3>
                 <button class="close-modal" id="closeChecklistsModal"><i class="fas fa-times"></i></button>
             </div>
             
@@ -316,7 +308,7 @@
                     <div class="form-group" style="margin-bottom: 10px;">
                         <input type="text" id="checklistDescricao" class="form-control" placeholder="Descrição ou instrução (opcional)">
                     </div>
-                    <button type="submit" class="btn-action btn-secondary-action" style="width: 100%; justify-content: center; background: #F4F5F7;">
+                    <button type="submit" class="btn-action btn-secondary-action" style="width: 100%; justify-content: center; background: #f8f7f4;">
                         <i class="fas fa-plus"></i> Adicionar à Lista
                     </button>
                 </form>
@@ -345,7 +337,7 @@
     <div class="task-modal-overlay" id="equipeModal">
         <div class="task-modal" style="max-width: 600px;">
             <div class="modal-header">
-                <h3><i class="fas fa-users-cog" style="color: #FF3B30; margin-right: 8px;"></i> Gerenciar Acessos</h3>
+                <h3><i class="fas fa-users-cog" style="color: #fc9003; margin-right: 8px;"></i> Gerenciar Acessos</h3>
                 <button class="close-modal" id="closeEquipeModal"><i class="fas fa-times"></i></button>
             </div>
             <div class="modal-body" style="display: flex; gap: 20px; flex-direction: column;">
@@ -400,7 +392,7 @@
     <div class="task-modal-overlay" id="gerenciarColunasModal">
         <div class="task-modal" style="max-width: 600px;">
             <div class="modal-header">
-                <h3><i class="fas fa-layer-group" style="color: #FF3B30; margin-right: 8px;"></i> Gerenciar Setores / Fases</h3>
+                <h3><i class="fas fa-layer-group" style="color: #fc9003; margin-right: 8px;"></i> Gerenciar Setores / Fases</h3>
                 <button class="close-modal" id="closeGerenciarColunasModal"><i class="fas fa-times"></i></button>
             </div>
             <div class="modal-body" style="display: flex; gap: 20px; flex-direction: column;">
@@ -421,7 +413,7 @@
                                 <input type="text" name="nome" id="novaColunaNome" class="form-control" required placeholder="Nome do Setor (Ex: Treinamento)">
                             </div>
                             <div class="form-group" style="margin-bottom: 0; display: flex; align-items: center; gap: 10px;">
-                                <input type="color" name="cor_hex" id="novaColunaCor" value="#007AFF" style="width: 40px; height: 38px; border: 1px solid #DDD; border-radius: 6px; cursor: pointer; padding: 2px;">
+                                <input type="color" name="cor_hex" id="novaColunaCor" value="#fc9003" style="width: 40px; height: 38px; border: 1px solid #DDD; border-radius: 6px; cursor: pointer; padding: 2px;">
                                 <button type="submit" class="btn-action btn-primary-action" style="height: 38px;">Adicionar</button>
                             </div>
                         </div>
